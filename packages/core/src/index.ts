@@ -1,4 +1,6 @@
-export function createApp () {
+export function createApp (config) {
+  const mpx = new EXPORT_MPX()
+
 }
 
 export function createPage () {
@@ -12,9 +14,12 @@ let watch
 
 export { watch, observable }
 function factory() {
-  return {}
+  function MPX () {
+
+  }
+  return MPX
 }
 
-const EXPORT_MPX = factory()
+const EXPORT_MPX:any = factory()
 
 export default EXPORT_MPX
