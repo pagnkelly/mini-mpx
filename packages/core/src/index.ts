@@ -1,6 +1,8 @@
-export function createApp (config) {
+// createApp 名字冲突，所以 * as了
+import * as platform from './platform/index'
+export function createApp (config: any) {
   const mpx = new EXPORT_MPX()
-
+  platform.createApp(config)
 }
 
 export function createPage () {
