@@ -1,3 +1,5 @@
+// copy 当前目录dist 到 examples下项目中
+
 const fs = require('fs-extra')
 
 async function copyFiles (file) {

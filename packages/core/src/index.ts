@@ -5,10 +5,12 @@ export function createApp (config: any) {
   platform.createApp(config)
 }
 
-export function createPage () {
+export function createPage (config: any) {
+  platform.createPage(config)
 }
 
-export function createComponent () {
+export function createComponent (config: any) {
+  platform.createComponent(config)
 }
 
 let observable
