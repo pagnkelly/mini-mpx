@@ -31,10 +31,12 @@ function createApp(config) {
     platform.createApp(config);
 }
 exports.createApp = createApp;
-function createPage() {
+function createPage(config) {
+    platform.createPage(config);
 }
 exports.createPage = createPage;
-function createComponent() {
+function createComponent(config) {
+    platform.createComponent(config);
 }
 exports.createComponent = createComponent;
 var observable;
