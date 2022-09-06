@@ -22,21 +22,46 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
+var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.observable = exports.watch = exports.createComponent = exports.createPage = exports.createApp = void 0;
 // createApp 名字冲突，所以 * as了
 var platform = __importStar(require("./platform/index"));
 function createApp(config) {
+    var rest = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        rest[_i - 1] = arguments[_i];
+    }
     var mpx = new EXPORT_MPX();
-    platform.createApp(config);
+    // ...rest 透传过去没问题啊，但是createApp只有俩参数，并没做解构处理，其他两个方法同理
+    // 另外发现，不注册App方法，page居然也能运行, 应该是App,page,component分别独立运行的
+    platform.createApp.apply(platform, __spreadArray([Object.assign({ proto: mpx.proto }, config)], rest, false));
 }
 exports.createApp = createApp;
 function createPage(config) {
-    platform.createPage(config);
+    var rest = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        rest[_i - 1] = arguments[_i];
+    }
+    var mpx = new EXPORT_MPX();
+    platform.createPage.apply(platform, __spreadArray([Object.assign({ proto: mpx.proto }, config)], rest, false));
 }
 exports.createPage = createPage;
 function createComponent(config) {
-    platform.createComponent(config);
+    var rest = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        rest[_i - 1] = arguments[_i];
+    }
+    var mpx = new EXPORT_MPX();
+    platform.createComponent.apply(platform, __spreadArray([Object.assign({ proto: mpx.proto }, config)], rest, false));
 }
 exports.createComponent = createComponent;
 var observable;

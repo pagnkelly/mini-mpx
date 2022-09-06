@@ -1,5 +1,6 @@
-export default function createComponent(config: any) {
-  // @ts-ignore App是微信小程序原生内置方法
-  Component(config)
+export default function createComponent(options: any, ...config: any) {
+  // @ts-ignore Component是微信小程序原生内置方法
+  Component(options)
+  console.log(config, 'Component')
 }
 

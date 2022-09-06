@@ -1,7 +1,7 @@
 // logs.js
 const util = require('../../utils/util.js')
-
-Page({
+const { createPage } = require('../../dist/index.js')
+createPage({
   data: {
     logs: []
   },

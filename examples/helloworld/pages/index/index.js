@@ -1,8 +1,8 @@
 // index.js
 // 获取应用实例
 const app = getApp()
-
-Page({
+const { createPage } = require('../../dist/index.js')
+createPage({
   data: {
     motto: 'Hello World',
     userInfo: {},
