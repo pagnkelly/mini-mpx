@@ -7,7 +7,7 @@
   createPage({
     onLoad () {
       const a = getApp()
-      console.log(a, 'ddddsss')
+      console.log(global.__mpx, a.getMpx(), 'ddddsss')
     }
   })
 </script>

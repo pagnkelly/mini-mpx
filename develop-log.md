@@ -19,3 +19,13 @@
 * 实现`createApp`,目标是最后执行APP(微信小程序的语法)
 
 * 增加examples目录，用于测试代码，由于微信小程序项目无法引用外部的js，也就是我打包出来的js，所以我手动copy到项目目录
+
+## 2022.09.05
+
+* 更改手动copy，改为tsc直接输出到example/helloworld
+
+* 增加createApp参数，发现问题,参数定义个数不对
+
+## 2022.09.06
+
+* 增加mixins方法，`getMpx`获取mpx实例，用于e2e

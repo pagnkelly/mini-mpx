@@ -93,7 +93,6 @@ if (webpackConfs.length === 1) {
   webpackConfs = webpackConfs[0]
 }
 
-
 try {
   modes.forEach(({ mode, env }) => {
     rm.sync(resolveDist(getRootPath(mode, env), '*'))

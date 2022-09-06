@@ -7,8 +7,6 @@
   createApp({
     onLaunch () {
     }
-  }, {
-    customCtor: () => {}
   })
 </script>
 
