@@ -29,3 +29,7 @@
 ## 2022.09.06
 
 * 增加mixins方法，`getMpx`获取mpx实例，用于e2e
+
+## 2022.09.13
+
+* 准备实现transferOptions,也就是对传入createApp类似方法的参数进行改造
