@@ -8,6 +8,7 @@ export default function createApp(options: any, ...config: any) {
       return EXPORT_MPX
     }
   }]
+  // 针对传入的参数进行转化，最核心的内容
   const { rawOptions } = transferOptions(options, 'app')
   options.mixins = builtInMixins
   // 暂时没想到什么场景需要自定义渲染方法
