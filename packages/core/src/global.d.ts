@@ -8,3 +8,5 @@ var currentInject: {
 var currentModuleId: string
 var currentResource: string
 var currentSrcMode: string
+
+type Type = 'blend' | 'app' | 'page' | 'component'

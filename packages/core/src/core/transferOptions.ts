@@ -1,6 +1,6 @@
 import { mergeInjectedMixins } from "./injectMixins";
 import mergeOptions from './mergeOptions'
-export default function transferOptions (options: any, type: string) {
+export default function transferOptions (options: any, type: Type) {
   // 应该是webpack-plugin会注入一些代码执行，但是具体还不清楚怎么注入的，后面再看
   let currentInject
   if (global.currentInject && global.currentInject.moduleId === global.currentModuleId) {

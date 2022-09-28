@@ -1,5 +1,3 @@
-type Type = 'blend' | 'app' | 'page' | 'component'
-
 let convertRule
 let curType: Type
 let currentHooksMap = {}
@@ -46,4 +44,29 @@ function transformHOOKS(options: any) {
 }
 
 function extractMixins(newOptions: {}, options: any, needConvert: boolean) {
+  // behaviors处理这里不写了 就是换成mixins 且做了合并处理
+
+  // mixins里的东西都搞到外层
+  if (options.mixins) {
+    for (const mixin of options.mixins) {
+      if (typeof mixin === 'string') {
+        console.log('不支持string', options.mpxFileResource)
+      } else {
+        extractMixins(newOptions, mixin, needConvert)
+      }
+    }
+  }
+
+  // 然后就是把mpx特有的删除掉，也弄出来
+  // pagelifetimes去掉
+  options = extractLifetimes(options)
+  // 如果methods里有page生命周期里的hook同名提示错误
+  options = extractPageHooks(options)
+  // needConvert为true 就需要处理，false是原生
+  if (needConvert) {
+    options = extractObservers(options)
+  }
+  // mergeMixins里面再做data,computed的复制
+  mergeMixins(newOptions, options)
+  return newOptions
 }
