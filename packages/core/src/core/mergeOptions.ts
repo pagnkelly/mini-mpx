@@ -70,3 +70,19 @@ function extractMixins(newOptions: {}, options: any, needConvert: boolean) {
   mergeMixins(newOptions, options)
   return newOptions
 }
+function extractLifetimes(options: any): any {
+  throw new Error("Function not implemented.")
+}
+
+function extractPageHooks(options: any): any {
+  throw new Error("Function not implemented.")
+}
+
+function extractObservers(options: any): any {
+  throw new Error("Function not implemented.")
+}
+
+function mergeMixins(newOptions: {}, options: any) {
+  throw new Error("Function not implemented.")
+}
+
